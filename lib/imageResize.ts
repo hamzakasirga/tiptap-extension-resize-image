@@ -91,7 +91,6 @@ export const ImageResize = Image.extend({
       const $positionContainer = document.createElement('div');
       const $container = document.createElement('div');
       const $img = document.createElement('img');
-      const iconStyle = 'width: 24px; height: 24px; cursor: pointer;';
 
       const dispatchNodeView = () => {
         if (typeof getPos === 'function') {
@@ -105,29 +104,26 @@ export const ImageResize = Image.extend({
       const paintPositionContoller = () => {
         const $postionController = document.createElement('div');
 
-        const $leftController = document.createElement('img');
-        const $centerController = document.createElement('img');
-        const $rightController = document.createElement('img');
+        const $leftController = document.createElement('i');
+        const $centerController = document.createElement('i');
+        const $rightController = document.createElement('i'); 
 
         $postionController.setAttribute(
           'style',
           'position: absolute; top: 0%; left: 50%; width: 100px; height: 25px; z-index: 999; background-color: rgba(255, 255, 255, 0.7); border-radius: 4px; border: 2px solid #6C6C6C; cursor: pointer; transform: translate(-50%, -50%); display: flex; justify-content: space-between; align-items: center; padding: 0 10px;',
         );
         $leftController.setAttribute(
-          'src',
-          'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/format_align_left/default/20px.svg',
+          'class',
+          'bi bi-text-left',
         );
-        $leftController.setAttribute('style', iconStyle);
         $centerController.setAttribute(
-          'src',
-          'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/format_align_center/default/20px.svg',
+          'class',
+          'bi bi-text-center',
         );
-        $centerController.setAttribute('style', iconStyle);
         $rightController.setAttribute(
-          'src',
-          'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/format_align_right/default/20px.svg',
+          'class',
+          'bi bi-text-right',
         );
-        $rightController.setAttribute('style', iconStyle);
 
         $leftController.addEventListener('click', () => {
           $positionContainer.setAttribute('style', 'display: flex; justify-content: flex-start;');
